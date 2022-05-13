@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import { fetchByNacionality, fetchSearchByName, fetchFoodNacionality }
 from '../services/apiRequests';
 import '../Styles/home.css';
+import '../Styles/ExploreNacionality.css';
 
 const limit = 12;
 
@@ -49,62 +50,63 @@ function ExploreFoodByNationality() {
   return (
     <>
       <Header Title="Explore Nationalities" />
-      <h1>Tela de Explore Food By Nationality</h1>
-      <label htmlFor="nacionalityFood">
-        <select
-          id="nacionalityFood"
-          data-testid="explore-by-nationality-dropdown"
-          name="nacionality"
-          onChange={ (e) => foodNacionalityFetch(e.target.value) }
-        >
-          <option data-testid="All-option">All</option>
-          {meals && meals.map(({ strArea }, index) => (
-            <option
-              data-testid={ `${strArea}-option` }
-              key={ index }
-              value={ strArea }
-            >
-              { strArea }
-            </option>
-          ))}
-        </select>
-      </label>
-      <section className="recipes-container">
-        {isSearching
-          ? recipes && recipes.meals.slice(0, limit).map((recipe, index) => (
-            <div
-              data-testid={ `${index}-recipe-card` }
-              key={ index }
-              role="presentation"
-              onClick={ () => handleClick(recipe.idMeal) }
-            >
-              <img
-                src={ recipe.strMealThumb }
-                alt={ recipe.strMealThumb }
-                data-testid={ `${index}-card-img` }
-              />
-              <p data-testid={ `${index}-card-name` }>{recipe.strMeal}</p>
-            </div>
-          ))
-          : (
-            foodNacionality.meals && foodNacionality.meals.slice(0, limit)
-              .map((el, index) => (
-                <div
-                  key={ index }
-                  role="presentation"
-                  data-testid={ `${index}-recipe-card` }
-                  onClick={ () => handleClick(el.idMeal) }
-                >
-                  <img
-                    src={ el.strMealThumb }
-                    alt={ el.strMealThumb }
-                    data-testid={ `${index}-card-img` }
-                  />
-                  <p data-testid={ `${index}-card-name` }>{el.strMeal}</p>
-                </div>
-              ))
-          )}
-      </section>
+      <div style={ { 'margin-top': '70px' } }>
+        <label htmlFor="nacionalityFood">
+          <select
+            id="nacionalityFood"
+            data-testid="explore-by-nationality-dropdown"
+            name="nacionality"
+            onChange={ (e) => foodNacionalityFetch(e.target.value) }
+          >
+            <option data-testid="All-option">All</option>
+            {meals && meals.map(({ strArea }, index) => (
+              <option
+                data-testid={ `${strArea}-option` }
+                key={ index }
+                value={ strArea }
+              >
+                { strArea }
+              </option>
+            ))}
+          </select>
+        </label>
+        <section className="recipes-container">
+          {isSearching
+            ? recipes && recipes.meals.slice(0, limit).map((recipe, index) => (
+              <div
+                data-testid={ `${index}-recipe-card` }
+                key={ index }
+                role="presentation"
+                onClick={ () => handleClick(recipe.idMeal) }
+              >
+                <img
+                  src={ recipe.strMealThumb }
+                  alt={ recipe.strMealThumb }
+                  data-testid={ `${index}-card-img` }
+                />
+                <p data-testid={ `${index}-card-name` }>{recipe.strMeal}</p>
+              </div>
+            ))
+            : (
+              foodNacionality.meals && foodNacionality.meals.slice(0, limit)
+                .map((el, index) => (
+                  <div
+                    key={ index }
+                    role="presentation"
+                    data-testid={ `${index}-recipe-card` }
+                    onClick={ () => handleClick(el.idMeal) }
+                  >
+                    <img
+                      src={ el.strMealThumb }
+                      alt={ el.strMealThumb }
+                      data-testid={ `${index}-card-img` }
+                    />
+                    <p data-testid={ `${index}-card-name` }>{el.strMeal}</p>
+                  </div>
+                ))
+            )}
+        </section>
+      </div>
       <Footer />
     </>
   );
