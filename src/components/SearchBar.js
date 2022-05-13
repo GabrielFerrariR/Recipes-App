@@ -7,6 +7,7 @@ import {
   fetchSearchByName, fetchByFirstLetter,
 } from '../services/apiRequests';
 import recipesContext from '../context/RecipesContext';
+import lupa from '../images/searchIcon.svg';
 
 function SearchBar({ Title }) {
   const {
@@ -123,15 +124,17 @@ function SearchBar({ Title }) {
         <input
           type="text"
           data-testid="search-input"
+          className="search-input"
           value={ searchInput }
           onChange={ ({ target: { value } }) => setSearchInput(value) }
         />
         <button
           type="button"
           data-testid="exec-search-btn"
+          className="exec-search-btn"
           onClick={ onSearchClick }
         >
-          Search
+          <img src={ lupa } alt="search-button" />
         </button>
       </section>
     </div>
