@@ -40,7 +40,7 @@ function Categories(props) {
   };
 
   const renderizeCategories = categories[Type] === undefined ? (<p>Carregando</p>) : (
-    <div>
+    <div className="categories-container">
       {categories[Type].slice(0, maxCategories).map((categorie, index) => (
         <button
           type="button"

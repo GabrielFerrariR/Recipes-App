@@ -39,21 +39,21 @@
 }
 
 .login-button {
-  background-color: #fafafa25;
-  border: 2px solid white;
+  background-color: white;
+  border: none;
+  border-color: none;
   border-radius: 6px;
   box-sizing: border-box;
-  color: #fafafa;
+  color: #ff990d;
   font-weight: 800;
   height: 40px;
   padding: 0 20px;
   width: 90px;
 }
 
-.login-button:disabled, .login-button[ disabled ] {
-  background-color: #e7e7e7c7;
-  border: none;
-  border-color: none;
-  color: #ff990d;
+.login-button:disabled, .login-button[ disabled ]  {
+  background-color: #fafafa25;
+  border: 2px solid white;
+  color: #fafafa;
 }
 
