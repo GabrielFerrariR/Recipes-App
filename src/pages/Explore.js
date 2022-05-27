@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import '../Styles/ExploreNacionality.css';
 
 function Explore() {
   const history = useHistory();
@@ -16,10 +17,10 @@ function Explore() {
   return (
     <>
       <Header Title="Explore" />
-      <h1>Tela de Explore</h1>
-      <div>
+      <div style={ { 'margin-top': '58px', height: '640px' } }>
         <button
           data-testid="explore-foods"
+          className="explore-foods-btn"
           type="submit"
           name="enterButton"
           onClick={ handleClickFood }
@@ -29,6 +30,7 @@ function Explore() {
         {' '}
         <button
           data-testid="explore-drinks"
+          className="explore-drinks-btn"
           type="submit"
           name="enterButton"
           onClick={ handleClickDrinks }

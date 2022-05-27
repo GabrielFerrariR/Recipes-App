@@ -23,8 +23,25 @@
   color: #3b3333;
   font-size: 1.2em;
   font-weight: 600;
-  height: 37px;
   padding: 5px 0 0 10px;
   position: absolute;
   width: 100%;
+}
+
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 360px;
+}
+
+.categories-container button {
+  background-color: #ffc700;
+  border: none;
+  border-radius: 6px;
+  color: #fafafa;
+  height: 28px;
+  margin: 5px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 105px;
 }

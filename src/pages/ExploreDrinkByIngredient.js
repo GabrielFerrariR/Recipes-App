@@ -31,24 +31,25 @@ function ExploreDrinkByIngredient() {
   return (
     <>
       <Header Title="Explore Ingredients" />
-      <h1>Tela de Explore Drink By Ingredient</h1>
-      {drinks && drinks.slice(0, limit).map((element, index) => (
-        <div
-          data-testid={ `${index}-ingredient-card` }
-          key={ index }
-          role="presentation"
-          onClick={ () => handleClick(element.strIngredient1) }
-        >
-          <img
-            src={ `https://www.thecocktaildb.com/images/ingredients/${element
-              .strIngredient1}-Small.png` }
-            alt={ `https://www.thecocktaildb.com/images/ingredients/${element
-              .strIngredient1}-Small.png` }
-            data-testid={ `${index}-card-img` }
-          />
-          <p data-testid={ `${index}-card-name` }>{element.strIngredient1}</p>
-        </div>
-      ))}
+      <div style={ { 'margin-top': '70px' } }>
+        {drinks && drinks.slice(0, limit).map((element, index) => (
+          <div
+            data-testid={ `${index}-ingredient-card` }
+            key={ index }
+            role="presentation"
+            onClick={ () => handleClick(element.strIngredient1) }
+          >
+            <img
+              src={ `https://www.thecocktaildb.com/images/ingredients/${element
+                .strIngredient1}-Small.png` }
+              alt={ `https://www.thecocktaildb.com/images/ingredients/${element
+                .strIngredient1}-Small.png` }
+              data-testid={ `${index}-card-img` }
+            />
+            <p data-testid={ `${index}-card-name` }>{element.strIngredient1}</p>
+          </div>
+        ))}
+      </div>
       <Footer />
     </>
   );
