@@ -36,7 +36,7 @@ Front-end:
 > * Uso da [TheMealDB](https://www.themealdb.com/) e [CocktailDb](https://www.cocktailgb.com/);
 > * Trello como ferramenta Kanban para o planejamento e execução projeto.
 
-## Desenvolvido por mim 👍: 
+## O que foi desenvolvido por mim 👍: 
 - Rotas do projeto;
 - Services de API fetching; 
 - Tela de receitas favoritas, perfil e filtros de pesquisa;
@@ -44,7 +44,10 @@ Front-end:
 - Prototipagem da estilização do projeto no Figma;
 - Estilização de diversos componentes;
 
-
+### To-do:
+- [] Terminar a estilização de alguns componentes
+- [] Testes integrados de todas as telas.
+- [] Dockerizar a aplicação
 
 ## Instalando Dependências
 
